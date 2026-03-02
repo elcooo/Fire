@@ -126,7 +126,22 @@ accelerate launch --mixed_precision="bf16" --use_fsdp \
 | `--train_data_weights` | Sampling weight per task, format: `task1=w1,task2=w2`; tasks not listed are excluded |
 | `--train_src_img_num_weights` | Weight by number of source images, format: `0=w0,1=w1,2=w2,3=w3` (0/1/2/3 source images) |
 
-Adjust dataset names and weights in `train_data_weights` as needed for your multi-dataset mix. More examples in `examples/train.sh`.
+Customize `train_data_weights` with your task names (same as the subdirectory names under `train_data_meta_dir`) and the sampling weights you want; only tasks listed here are included in training. For more runnable scripts see `examples/`; for the full list of training arguments see `src/arguments.py`.
+
+---
+
+### LoRA Training
+
+For parameter-efficient fine-tuning, you can use **PEFT LoRA** instead of full-parameter training. Add `--use_peft_lora` and set `--lora_r` (e.g. 8, 16, 32, 64), `--lora_alpha` (often same as `lora_r` or 2×), and optionally `--lora_dropout` and `--lora_target_modules`. With LoRA, only adapter weights are trained; checkpoints save the adapter only (when using FSDP, the full model is not merged). To resume or load a pretrained adapter, use `--lora_path`. Example: `examples/train_lora.sh`.
+
+| Argument | Description |
+|----------|-------------|
+| `--use_peft_lora` | Enable PEFT LoRA fine-tuning |
+| `--lora_r` | LoRA rank (e.g. 8, 16, 32, 64) |
+| `--lora_alpha` | LoRA alpha (often same as `lora_r`) |
+| `--lora_dropout` | LoRA dropout |
+| `--lora_target_modules` | Comma-separated module names to apply LoRA |
+| `--lora_path` | Path to pretrained LoRA adapter (for resume or inference) |
 
 ---
 
