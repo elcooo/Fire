@@ -13,9 +13,9 @@
 </p> 
 
 <p align="center">
-    🤗 <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0">HuggingFace</a> |
+    🤗 <a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.1">HuggingFace</a> |
     🤖 <a href="https://modelscope.cn/models/FireRedTeam/FireRed-Image-Edit-1.0">ModelScope</a> |
-    🖥️ <a href="https://huggingface.co/spaces/FireRedTeam/FireRed-Image-Edit-1.0">Demo</a> |
+    🖥️ <a href="https://huggingface.co/spaces/FireRedTeam/FireRed-Image-Edit-1.1">Demo</a> |
     📄 <a href="https://arxiv.org/abs/2602.13344">Technical Report</a>
 </p>
 <p align="center">
@@ -33,7 +33,7 @@
 - 🆔 **State-of-the-Art Identity Consistency**: Open-source SOTA in character identity preservation, ensuring subjects remain recognizable across complex edits.
 - 🧩 **Multi-Element Fusion**: Freely combine 10+ elements with Agent-powered automatic cropping and stitching—no more struggles with short prompts.
 - 💄 **Comprehensive Portrait Makeup**: Dozens of styles from professional beauty retouching and yellow/olive skin tone brightening to Halloween witch makeup and creative looks.
-- 📝 ** Text Style Reference**: Maintains high-fidelity typography and stylized text comparable to closed-source solutions.
+- 📝 **Text Style Reference**: Maintains high-fidelity typography and stylized text comparable to closed-source solutions.
 - 🖼️ **Professional Photo Restoration**: High-quality old photo repair and enhancement with superior detail recovery.
 
 #### Ultimate Engineering Optimization
@@ -113,7 +113,7 @@ Some real outputs produced by FireRed-Image-Edit across general editing.
         <td style="white-space: nowrap; padding: 8px; border: 1px solid #d0d7de;">Image-Editing</td>
         <td style="padding: 8px; border: 1px solid #d0d7de;">Distilled version of FireRed-Image-Edit-1.0 for faster inference</td>
         <td style="padding: 8px; border: 1px solid #d0d7de;">
-          <span style="white-space: nowrap;">To be released</span>
+          <span style="white-space: nowrap;">🤗&nbsp;<a href="https://huggingface.co/FireRedTeam/FireRed-Image-Edit-1.0-ComfyUI/blob/main/FireRed-Image-Edit-1.0-Lightning-8steps-v1.0.safetensors">HuggingFace</a></span>
         </td>
       </tr>
       <tr>
