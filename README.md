@@ -66,14 +66,14 @@ FireRed-Image-Edit establishes a new state-of-the-art among open-source models o
 ## 🎨 Showcase
 Some real outputs produced by FireRed-Image-Edit across general editing.
 
-### Portrait([More Case](docs/portrait.md))
+### Portrait([More Cases](docs/portrait_en.md) | [更多结果](docs/portrait_cn.md))
 <p align="center">
     <a href="./assets/showcase_portrait.png">
         <img src="./assets/showcase_portrait.jpg" width="800"/>
     </a>
 <p>
 
-### Multi-image-fusion([More Case](docs/multi_image.md))
+### Multi-image-fusion([More Cases](docs/multi_image.md))
 <p align="center">
     <img src="./assets/showcase_multi_fusion.png" width="800"/>
 <p> 
@@ -91,7 +91,7 @@ Some real outputs produced by FireRed-Image-Edit across general editing.
 > case2: 为人物添加缎光底妆：使用自然色缎光粉底均匀肤色，描绘自然眉形并填充浅棕色眉粉，眼部涂抹深棕色眼影并晕染眼尾，画自然内眼线，刷上浓密睫毛膏，在卧蚕处提亮，涂抹水润感红色豆沙色口红并勾勒唇形，在苹果肌扫上粉色腮红，在鼻梁、颧骨处轻扫银色高光。
 
 
-### Text Style Reference([Lora](https://huggingface.co/FireRedTeam/FireRed-Image-Edit-LoRA-Zoo/blob/main/FireRed-Image-Edit-Covercraft.safetensors))([More Case](docs/text.md))
+### Text Style Reference([Lora](https://huggingface.co/FireRedTeam/FireRed-Image-Edit-LoRA-Zoo/blob/main/FireRed-Image-Edit-Covercraft.safetensors))([More Cases](docs/text.md))
 <p align="center">
     <img src="./assets/showcase_mult_text.png" width="800"/>
 <p> 
