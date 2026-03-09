@@ -2,6 +2,7 @@
 
 import json
 import os
+import os.path as osp
 
 import torch
 from accelerate import Accelerator
@@ -32,14 +33,12 @@ def main(args):
 
             data = json.loads(stripped_line)
             if args.edit_task == data["task"] or args.edit_task == "all":
-                file_name = data["id"]
-
-                if args.multi_folder:
-                    sub_folder = os.path.join(args.save_path, data["task"])
+                sub_folder = os.path.join(args.save_path, data["task"])
+                if accelerator.is_main_process:
                     os.makedirs(sub_folder, exist_ok=True)
-                    img_save_path = os.path.join(sub_folder, f"{file_name}.png")
-                else:
-                    img_save_path = os.path.join(args.save_path, f"{file_name}.png")
+                
+                src_name = osp.basename(data["source"]) 
+                img_save_path = os.path.join(sub_folder, src_name)
 
                 data[args.save_key] = img_save_path
                 data_list.append(data)
@@ -65,7 +64,11 @@ def main(args):
         desc="Generating",
         disable=not accelerator.is_main_process,
     ):
-        instruction = data_line.get("a_to_b_instructions", "")
+        if args.lang == 'cn':
+            instruction = data_line.get("a_to_b_instructions", "")
+        elif args.lang == 'eng':
+            instruction = data_line.get("a_to_b_instructions_eng", "")
+        
         input_image_path = data_line["source"]
         input_image_raw = Image.open(input_image_path).convert("RGB")
 
@@ -113,6 +116,13 @@ if __name__ == "__main__":
         "--model-path",
         type=str,
         default="FireRedTeam/FireRed-Image-Edit-1.0",
+    )
+    arg_parser.add_argument(
+        "--lang", 
+        type=str, 
+        choices=["cn", "eng"], 
+        default="cn", 
+        help="Language choice: cn or eng (default: cn)"
     )
     arg_parser.add_argument("--lora-name", type=str, default=None)
     arg_parser.add_argument("--save-path", type=str, required=True)
