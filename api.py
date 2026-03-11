@@ -64,7 +64,7 @@ async def edit_image(
             )
 
         out_img = output.images[0]
-        out_img.save("/workspace/FireRed-Image-Edit/api_test_output.png")
+        
 
         buf = io.BytesIO()
         out_img.save(buf, format="PNG")
