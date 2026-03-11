@@ -26,6 +26,10 @@ def startup_event():
 def health():
     return {"ok": True, "model": MODEL_ID}
 
+@app.get("/ping")
+def ping():
+    return {"status": "healthy"}
+
 @app.post("/edit")
 async def edit_image(
     file: UploadFile = File(...),
