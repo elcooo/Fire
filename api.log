@@ -1,0 +1,51 @@
+nohup: ignoring input
+INFO:     Started server process [393]
+INFO:     Waiting for application startup.
+Loading pipeline: FireRedTeam/FireRed-Image-Edit-1.1
+🚀 Initializing Fast Pipeline from: FireRedTeam/FireRed-Image-Edit-1.1
+[1/4] Quantizing Text Encoder & Transformer...
+Fetching 4 files:   0%|          | 0/4 [00:00<?, ?it/s]Fetching 4 files: 100%|██████████| 4/4 [00:00<00:00, 5307.57it/s]
+Loading weights:   0%|          | 0/729 [00:00<?, ?it/s]Loading weights:  17%|█▋        | 127/729 [00:00<00:00, 1251.90it/s]Loading weights:  35%|███▍      | 253/729 [00:00<00:00, 1052.15it/s]Loading weights:  52%|█████▏    | 380/729 [00:00<00:00, 1139.73it/s]Loading weights:  74%|███████▍  | 543/729 [00:00<00:00, 1300.33it/s]Loading weights: 100%|██████████| 729/729 [00:00<00:00, 1362.80it/s]
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+/usr/local/lib/python3.12/dist-packages/huggingface_hub/utils/_validators.py:206: UserWarning: The `local_dir_use_symlinks` argument is deprecated and ignored in `hf_hub_download`. Downloading to a local directory does not use symlinks anymore.
+  warnings.warn(
+Fetching 5 files:   0%|          | 0/5 [00:00<?, ?it/s]Fetching 5 files: 100%|██████████| 5/5 [00:00<00:00, 15791.81it/s]
+Loading checkpoint shards:   0%|          | 0/5 [00:00<?, ?it/s]Loading checkpoint shards:  20%|██        | 1/5 [00:01<00:04,  1.10s/it]Loading checkpoint shards:  40%|████      | 2/5 [00:02<00:03,  1.05s/it]Loading checkpoint shards:  60%|██████    | 3/5 [00:03<00:02,  1.03s/it]Loading checkpoint shards:  80%|████████  | 4/5 [00:04<00:00,  1.00it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:04<00:00,  1.48it/s]Loading checkpoint shards: 100%|██████████| 5/5 [00:04<00:00,  1.20it/s]
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:00,  8.72it/s]Loading pipeline components...:  67%|██████▋   | 4/6 [00:00<00:00, 15.71it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  3.62it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:01<00:00,  4.37it/s]
+[2/4] Enabling DiT Cache & Static Compilation...
+[03-11 07:48:49] [Cache-DiT] QwenImageEditPlusPipeline is officially supported by cache-dit. Use it's pre-defined BlockAdapter directly!
+[03-11 07:48:49] [Cache-DiT] Auto fill blocks_name: transformer_blocks.
+[03-11 07:48:49] [Cache-DiT] Match Block Forward Pattern: QwenImageTransformerBlock, ForwardPattern.Pattern_1
+[03-11 07:48:49] [Cache-DiT] IN:('hidden_states', 'encoder_hidden_states'), OUT:('encoder_hidden_states', 'hidden_states'))
+[03-11 07:48:49] [Cache-DiT] Use custom 'enable_separate_cfg' from BlockAdapter: True. Pipeline: QwenImageEditPlusPipeline.
+[03-11 07:48:49] [Cache-DiT] Collected Context Config: DBCache_F8B0_W3I1M0MC0_R0.15_CFG1, Calibrator Config: TaylorSeer_O(1)
+[03-11 07:48:49] [Cache-DiT] Match Blocks: CachedBlocks_Pattern_0_1_2, for transformer_blocks, cache_context: transformer_blocks_133697845721808, context_manager: QwenImageEditPlusPipeline_133697844411904.
+[3/4] Warming up... usually takes ~2-5 mins
+  0%|          | 0/4 [00:00<?, ?it/s]/usr/local/lib/python3.12/dist-packages/torch/_dynamo/variables/functions.py:1575: UserWarning: Dynamo detected a call to a `functools.lru_cache`-wrapped function. Dynamo ignores the cache wrapper and directly traces the wrapped function. Silent incorrectness is only a *potential* risk, not something we have observed. Enable TORCH_LOGS="+dynamo" for a DEBUG stack trace.
+  torch._dynamo.utils.warn_once(msg)
+/usr/local/lib/python3.12/dist-packages/torch/_inductor/lowering.py:1890: UserWarning: Torchinductor does not support code generation for complex operators. Performance may be worse than eager.
+  warnings.warn(
+ 25%|██▌       | 1/4 [00:05<00:17,  5.78s/it] 50%|█████     | 2/4 [00:07<00:06,  3.11s/it] 75%|███████▌  | 3/4 [00:08<00:02,  2.26s/it]100%|██████████| 4/4 [00:09<00:00,  1.86s/it]100%|██████████| 4/4 [00:09<00:00,  2.38s/it]
+✅ Optimization ready.
+Pipeline ready.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+INFO:     100.64.1.66:35244 - "GET / HTTP/1.1" 404 Not Found
+INFO:     100.64.1.66:35256 - "GET / HTTP/1.1" 404 Not Found
+INFO:     100.64.1.64:57672 - "GET /health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49210 - "GET /health HTTP/1.1" 200 OK
+guidance_scale is passed as 1.0, but ignored since the model is not guidance-distilled.
+  0%|          | 0/10 [00:00<?, ?it/s] 10%|█         | 1/10 [00:02<00:26,  2.92s/it] 20%|██        | 2/10 [00:04<00:15,  1.94s/it] 30%|███       | 3/10 [00:05<00:11,  1.63s/it] 40%|████      | 4/10 [00:06<00:08,  1.48s/it] 50%|█████     | 5/10 [00:07<00:07,  1.40s/it] 60%|██████    | 6/10 [00:09<00:05,  1.35s/it] 70%|███████   | 7/10 [00:09<00:03,  1.03s/it] 80%|████████  | 8/10 [00:10<00:02,  1.04s/it] 90%|█████████ | 9/10 [00:11<00:01,  1.11s/it]100%|██████████| 10/10 [00:13<00:00,  1.16s/it]100%|██████████| 10/10 [00:13<00:00,  1.32s/it]
+INFO:     100.64.1.64:43104 - "POST /edit HTTP/1.1" 200 OK
+guidance_scale is passed as 1.0, but ignored since the model is not guidance-distilled.
+  0%|          | 0/17 [00:00<?, ?it/s]  6%|▌         | 1/17 [00:01<00:16,  1.05s/it] 12%|█▏        | 2/17 [00:02<00:17,  1.16s/it] 18%|█▊        | 3/17 [00:03<00:16,  1.20s/it] 24%|██▎       | 4/17 [00:04<00:15,  1.21s/it] 29%|██▉       | 5/17 [00:06<00:14,  1.22s/it] 35%|███▌      | 6/17 [00:07<00:13,  1.23s/it] 41%|████      | 7/17 [00:08<00:12,  1.23s/it] 47%|████▋     | 8/17 [00:09<00:11,  1.23s/it] 53%|█████▎    | 9/17 [00:10<00:07,  1.04it/s] 59%|█████▉    | 10/17 [00:11<00:06,  1.01it/s] 65%|██████▍   | 11/17 [00:11<00:04,  1.25it/s] 71%|███████   | 12/17 [00:12<00:04,  1.14it/s] 76%|███████▋  | 13/17 [00:12<00:02,  1.39it/s] 82%|████████▏ | 14/17 [00:13<00:02,  1.22it/s] 88%|████████▊ | 15/17 [00:15<00:01,  1.06it/s] 94%|█████████▍| 16/17 [00:16<00:01,  1.03s/it]100%|██████████| 17/17 [00:17<00:00,  1.10s/it]100%|██████████| 17/17 [00:17<00:00,  1.04s/it]
+INFO:     100.64.1.2:34822 - "POST /edit HTTP/1.1" 200 OK
+INFO:     100.64.1.66:54380 - "GET / HTTP/1.1" 404 Not Found
+guidance_scale is passed as 1.0, but ignored since the model is not guidance-distilled.
+  0%|          | 0/17 [00:00<?, ?it/s]  6%|▌         | 1/17 [00:01<00:17,  1.08s/it] 12%|█▏        | 2/17 [00:02<00:17,  1.17s/it] 18%|█▊        | 3/17 [00:03<00:16,  1.20s/it] 24%|██▎       | 4/17 [00:04<00:15,  1.22s/it] 29%|██▉       | 5/17 [00:06<00:14,  1.22s/it] 35%|███▌      | 6/17 [00:07<00:13,  1.23s/it] 41%|████      | 7/17 [00:08<00:11,  1.12s/it] 47%|████▋     | 8/17 [00:08<00:08,  1.08it/s] 53%|█████▎    | 9/17 [00:09<00:07,  1.09it/s] 59%|█████▉    | 10/17 [00:10<00:05,  1.26it/s] 65%|██████▍   | 11/17 [00:10<00:04,  1.21it/s] 71%|███████   | 12/17 [00:11<00:03,  1.36it/s] 76%|███████▋  | 13/17 [00:12<00:03,  1.28it/s] 82%|████████▏ | 14/17 [00:12<00:02,  1.42it/s] 88%|████████▊ | 15/17 [00:13<00:01,  1.31it/s] 94%|█████████▍| 16/17 [00:14<00:00,  1.18it/s]100%|██████████| 17/17 [00:16<00:00,  1.03it/s]100%|██████████| 17/17 [00:16<00:00,  1.05it/s]
+INFO:     100.64.1.5:59618 - "POST /edit HTTP/1.1" 200 OK
+INFO:     100.64.1.65:55254 - "GET / HTTP/1.1" 404 Not Found
+INFO:     100.64.1.65:33298 - "GET / HTTP/1.1" 404 Not Found
+INFO:     100.64.1.65:33312 - "GET / HTTP/1.1" 404 Not Found
+INFO:     100.64.1.64:50702 - "GET / HTTP/1.1" 404 Not Found
+INFO:     100.64.1.65:49696 - "GET / HTTP/1.1" 404 Not Found

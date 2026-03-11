@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.log
+*.png
+*.jpg
+*.jpeg
+*.tgz
+.git
